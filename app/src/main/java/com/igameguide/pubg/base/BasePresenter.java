@@ -16,8 +16,9 @@
 
 package com.igameguide.pubg.base;
 
-public interface BasePresenter {
+public interface BasePresenter<T> {
 
     void start();
+
 
 }

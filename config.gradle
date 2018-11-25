@@ -109,6 +109,8 @@ ext {
             "umeng-analytics"          : "com.umeng.analytics:analytics:6.0.1",
             "okgo"                     : "com.lzy.net:okgo:3.0.4",
             "constraint-layout"        : "com.android.support.constraint:constraint-layout:1.1.3"
+//            "butterknife"              : "com.jakewharton:butterknife:9.0.0-rc2",
+//            "butterknife-compiler"     : "com.jakewharton:butterknife-compiler:9.0.0-rc2"
     ]
 
 
