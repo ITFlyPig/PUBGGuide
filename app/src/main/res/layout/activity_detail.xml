@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/main_color"
+                android:paddingBottom="15dp"
+                android:paddingTop="15dp">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/region"
+                    android:textColor="@color/white"
+                    android:paddingLeft="15dp"
+                    android:textSize="@dimen/text_size" />
+
+                <TextView
+                    android:id="@+id/tv_region_middle_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_sel_color"
+                    android:textSize="@dimen/text_size" />
+
+                <ImageView
+                    android:id="@+id/iv_region_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1px"
+                android:background="@color/main_color"
+                android:paddingBottom="15dp"
+                android:paddingTop="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mode"
+                    android:paddingLeft="15dp"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size" />
+
+                <TextView
+                    android:id="@+id/tv_mode_middle_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_sel_color"
+                    android:textSize="@dimen/text_size" />
+
+                <ImageView
+                    android:id="@+id/iv_mode_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="吃鸡数"
+                    android:paddingLeft="15dp"
+                    android:textSize="@dimen/text_size" />
+
+                <TextView
+                    android:id="@+id/wins"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:paddingRight="15dp"
+                    android:layout_alignParentRight="true"
+                    android:textSize="@dimen/text_size" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/gray" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="吃鸡率"
+                    android:paddingLeft="15dp"
+                    android:textSize="@dimen/text_size" />
+
+                <TextView
+                    android:id="@+id/wins_lv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:paddingRight="15dp"
+                    android:textSize="@dimen/text_size" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/gray" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="前10数"
+                    android:paddingLeft="15dp"
+                    android:textSize="@dimen/text_size" />
+
+                <TextView
+                    android:id="@+id/top10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:paddingRight="15dp"
+                    android:textSize="@dimen/text_size" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/gray" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="最大击杀数"
+                    android:paddingLeft="15dp"
+                    android:textSize="@dimen/text_size" />
+
+                <TextView
+                    android:id="@+id/maxkill"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:paddingRight="15dp"
+                    android:textSize="@dimen/text_size" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/gray" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="最远距离击杀"
+                    android:paddingLeft="15dp"
+                    android:textSize="@dimen/text_size" />
+
+                <TextView
+                    android:id="@+id/longestKill"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:paddingRight="15dp"
+                    android:textSize="@dimen/text_size" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/gray" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="爆头率"
+                    android:paddingLeft="15dp"
+                    android:textSize="@dimen/text_size" />
+
+                <TextView
+                    android:id="@+id/headshotKills"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:paddingRight="15dp"
+                    android:textSize="@dimen/text_size" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/gray" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="平均生存时间"
+                    android:paddingLeft="15dp"
+                    android:textSize="@dimen/text_size" />
+
+                <TextView
+                    android:id="@+id/timeSurvivedAvg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:paddingRight="15dp"
+                    android:textSize="@dimen/text_size" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/gray" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="K/D"
+                    android:paddingLeft="15dp"
+                    android:textSize="@dimen/text_size" />
+
+                <TextView
+                    android:id="@+id/kd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:paddingRight="15dp"
+                    android:textSize="@dimen/text_size" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/gray" />
+
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <cn.carbswang.android.numberpickerview.library.NumberPickerView
+        android:id="@+id/picker"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_centerHorizontal="true"
+        android:background="#11333333"
+        app:npv_ItemPaddingHorizontal="5dp"
+        app:npv_ItemPaddingVertical="5dp"
+        app:npv_ShowCount="3"
+        app:npv_RespondChangeOnDetached="false"
+        app:npv_TextSizeNormal="16sp"
+        app:npv_TextSizeSelected="20sp"
+        app:npv_WrapSelectorWheel="true"
+        android:layout_alignParentBottom="true"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_default"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</RelativeLayout>

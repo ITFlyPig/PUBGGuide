@@ -6,9 +6,12 @@ import com.lzy.okgo.OkGo;
 
 public class PubgApplication extends Application {
 
+    private static PubgApplication mInstance;
+
     @Override
     public void onCreate() {
         super.onCreate();
+        mInstance = this;
         initNetwork();
     }
 
@@ -19,4 +22,11 @@ public class PubgApplication extends Application {
     private void initNetwork(){
         OkGo.getInstance().init(this);
     }
+
+
+    public static PubgApplication getInstance() {
+        return mInstance;
+    }
+
+
 }

@@ -20,11 +20,6 @@ public interface BaseView<T> {
 
     void setPresenter(T presenter);
 
-    /**
-     * 当数据加载完成
-     * @param resp
-     */
-    void onLoadSuccess(String resp);
 
     /**
      * 开始加载数据

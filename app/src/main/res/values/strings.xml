@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">PUBG Guide</string>
+    <string name="query">点此查询绝地求生战绩</string>
+    <string name="please_input">请输入您的角色ID</string>
+    <string name="region">服务器</string>
+    <string name="mode">游戏模式</string>
 </resources>

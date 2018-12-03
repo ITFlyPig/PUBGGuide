@@ -46,7 +46,13 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         mFragments = new ArrayList<>();
         for (int i = 0; i < mTitles.length; i++) {
             String title = mTitles[i];
-            mFragments.add(SimpleCardFragment.getInstance(title));
+            if (i == 0) {
+                mFragments.add(StandingsFragment.getInstance());
+
+            } else {
+                mFragments.add(SimpleCardFragment.getInstance(title));
+            }
+
             mTabEntities.add(new TabEntity(title, mIconSelectIds[i], mIconUnselectIds[i]));
         }
 
@@ -96,10 +102,6 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
     }
 
-    @Override
-    public void onLoadSuccess(String resp) {
-
-    }
 
     @Override
     public void onLoadStart() {
