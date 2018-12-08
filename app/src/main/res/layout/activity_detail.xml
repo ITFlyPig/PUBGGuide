@@ -1,10 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/titlebar"
+        android:background="@color/main_color"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:id="@+id/iv_left_icon"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:src="@mipmap/back"
+            android:layout_width="16dp"
+            android:layout_height="16dp" />
+        <TextView
+            android:id="@+id/titletext"
+            android:layout_toRightOf="@id/iv_left_icon"
+            android:layout_marginLeft="5dp"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/title_text_size"
+            android:text="@string/data"/>
+
+    </RelativeLayout>
 
     <ScrollView
+        android:layout_below="@id/titlebar"
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -14,6 +42,7 @@
             android:orientation="vertical">
 
             <RelativeLayout
+                android:id="@+id/rl_region"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/main_color"
@@ -24,9 +53,9 @@
                     android:id="@+id/tv_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
                     android:text="@string/region"
                     android:textColor="@color/white"
-                    android:paddingLeft="15dp"
                     android:textSize="@dimen/text_size" />
 
                 <TextView
@@ -38,11 +67,16 @@
 
                 <ImageView
                     android:id="@+id/iv_region_right"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_width="18dp"
+                    android:layout_height="9dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="15dp"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/icon_down"/>
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/rl_mode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1px"
@@ -53,8 +87,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/mode"
                     android:paddingLeft="15dp"
+                    android:text="@string/mode"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_size" />
 
@@ -67,8 +101,12 @@
 
                 <ImageView
                     android:id="@+id/iv_mode_right"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_width="18dp"
+                    android:layout_height="9dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="15dp"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/icon_down"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -79,17 +117,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="吃鸡数"
                     android:paddingLeft="15dp"
+                    android:text="吃鸡数"
                     android:textSize="@dimen/text_size" />
 
                 <TextView
                     android:id="@+id/wins"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:paddingRight="15dp"
-                    android:layout_alignParentRight="true"
                     android:textSize="@dimen/text_size" />
 
                 <View
@@ -109,16 +147,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="吃鸡率"
                     android:paddingLeft="15dp"
+                    android:text="吃鸡率"
                     android:textSize="@dimen/text_size" />
 
                 <TextView
                     android:id="@+id/wins_lv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
                     android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
                     android:paddingRight="15dp"
                     android:textSize="@dimen/text_size" />
 
@@ -139,16 +177,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="前10数"
                     android:paddingLeft="15dp"
+                    android:text="前10数"
                     android:textSize="@dimen/text_size" />
 
                 <TextView
                     android:id="@+id/top10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
                     android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
                     android:paddingRight="15dp"
                     android:textSize="@dimen/text_size" />
 
@@ -169,16 +207,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="最大击杀数"
                     android:paddingLeft="15dp"
+                    android:text="最大击杀数"
                     android:textSize="@dimen/text_size" />
 
                 <TextView
                     android:id="@+id/maxkill"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
                     android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
                     android:paddingRight="15dp"
                     android:textSize="@dimen/text_size" />
 
@@ -199,16 +237,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="最远距离击杀"
                     android:paddingLeft="15dp"
+                    android:text="最远距离击杀"
                     android:textSize="@dimen/text_size" />
 
                 <TextView
                     android:id="@+id/longestKill"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
                     android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
                     android:paddingRight="15dp"
                     android:textSize="@dimen/text_size" />
 
@@ -229,16 +267,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="爆头率"
                     android:paddingLeft="15dp"
+                    android:text="爆头率"
                     android:textSize="@dimen/text_size" />
 
                 <TextView
                     android:id="@+id/headshotKills"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
                     android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
                     android:paddingRight="15dp"
                     android:textSize="@dimen/text_size" />
 
@@ -259,16 +297,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="平均生存时间"
                     android:paddingLeft="15dp"
+                    android:text="平均生存时间"
                     android:textSize="@dimen/text_size" />
 
                 <TextView
                     android:id="@+id/timeSurvivedAvg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
                     android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
                     android:paddingRight="15dp"
                     android:textSize="@dimen/text_size" />
 
@@ -289,16 +327,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="K/D"
                     android:paddingLeft="15dp"
+                    android:text="K/D"
                     android:textSize="@dimen/text_size" />
 
                 <TextView
                     android:id="@+id/kd"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
                     android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
                     android:paddingRight="15dp"
                     android:textSize="@dimen/text_size" />
 
@@ -316,20 +354,43 @@
     </ScrollView>
 
 
-    <cn.carbswang.android.numberpickerview.library.NumberPickerView
-        android:id="@+id/picker"
+    <LinearLayout
+
+        android:id="@+id/ll_pick"
         android:layout_width="match_parent"
-        android:layout_height="140dp"
-        android:layout_centerHorizontal="true"
-        android:background="#11333333"
-        app:npv_ItemPaddingHorizontal="5dp"
-        app:npv_ItemPaddingVertical="5dp"
-        app:npv_ShowCount="3"
-        app:npv_RespondChangeOnDetached="false"
-        app:npv_TextSizeNormal="16sp"
-        app:npv_TextSizeSelected="20sp"
-        app:npv_WrapSelectorWheel="true"
-        android:layout_alignParentBottom="true"/>
+        android:layout_alignParentBottom="true"
+        android:visibility="invisible"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/rl_done"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/gray">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/done"
+                android:layout_alignParentRight="true"
+                android:padding="6dp"/>
+        </RelativeLayout>
+
+        <cn.carbswang.android.numberpickerview.library.NumberPickerView
+            android:id="@+id/picker"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:background="@color/white"
+            app:npv_ItemPaddingHorizontal="5dp"
+            app:npv_ItemPaddingVertical="5dp"
+            app:npv_RespondChangeOnDetached="false"
+            app:npv_ShowCount="3"
+            app:npv_TextSizeNormal="16sp"
+            app:npv_TextSizeSelected="20sp"
+            app:npv_WrapSelectorWheel="true" />
+
+    </LinearLayout>
+
 
     <RelativeLayout
         android:id="@+id/rl_default"

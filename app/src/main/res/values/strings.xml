@@ -4,4 +4,6 @@
     <string name="please_input">请输入您的角色ID</string>
     <string name="region">服务器</string>
     <string name="mode">游戏模式</string>
+    <string name="done">完成</string>
+    <string name="data">战绩</string>
 </resources>
