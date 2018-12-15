@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Stats Tracker</string>
+    <string name="query">点此查询您的吃鸡战绩</string>
+    <string name="please_input">请输入您的角色ID</string>
+    <string name="region">服务器</string>
+    <string name="mode">游戏模式</string>
+    <string name="done">完成</string>
+    <string name="data">战绩</string>
+    <string name="server">服务器</string>
+    <string name="wins">吃鸡数</string>
+    <string name="win_lv">吃鸡率</string>
+    <string name="top_10">前10数</string>
+    <string name="most_kills">最大击杀数</string>
+    <string name="longest_kill">最远距离击杀</string>
+    <string name="headshot">爆头</string>
+    <string name="solo">单排</string>
+    <string name="duo">双排</string>
+    <string name="squad">四排</string>
+    <string name="avg_time">平均生存时间</string>
+    <string name="network_error">网络请求错误</string>
+    <string name="network_success">网络请求成功</string>
+    <string name="input_not_empty">输入不能为空</string>
+</resources>

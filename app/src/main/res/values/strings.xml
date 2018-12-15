@@ -1,9 +1,26 @@
 <resources>
     <string name="app_name">PUBG Guide</string>
-    <string name="query">点此查询绝地求生战绩</string>
-    <string name="please_input">请输入您的角色ID</string>
+    <string name="query">Click To View Your PUBG Stats</string>
+    <string name="please_input">Please Input Your Name</string>
     <string name="region">服务器</string>
-    <string name="mode">游戏模式</string>
-    <string name="done">完成</string>
-    <string name="data">战绩</string>
+    <string name="mode">Mode</string>
+    <string name="done">Done</string>
+    <string name="data">Your stats</string>
+    <string name="server">Server</string>
+    <string name="wins">Wins</string>
+    <string name="win_lv">Win%</string>
+    <string name="top_10">Top 10</string>
+    <string name="most_kills">Most Kills</string>
+    <string name="longest_kill">Longest Kill</string>
+    <string name="headshot">Headshot</string>
+    <string name="solo">Solo</string>
+    <string name="duo">Duo</string>
+    <string name="squad">Squad</string>
+    <string name="avg_time">Average Time Survived</string>
+    <string name="umeng_key">5c0f8a44f1f556656700011f</string>
+    <string name="ADUnitID_Banner">ca-app-pub-9224978836240566/7986419622</string>
+    <string name="ADUnitID_Screen">ca-app-pub-9224978836240566/5256190792</string>
+    <string name="network_error">Network error</string>
+    <string name="network_success">Network success</string>
+    <string name="input_not_empty">Input can not be empty</string>
 </resources>

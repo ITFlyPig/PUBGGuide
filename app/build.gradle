@@ -9,6 +9,9 @@ android {
         versionCode rootProject.ext.android["versionCode"]
         versionName rootProject.ext.android["versionName"]
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        flavorDimensions "versionCode"
+        multiDexEnabled true
+
     }
     buildTypes {
         release {
@@ -21,6 +24,20 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+
+    productFlavors{
+
+        googlePaly{
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "googlePaly"]
+        }
+    }
+
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
     }
 }
 
@@ -37,13 +54,20 @@ dependencies {
     androidTestImplementation rootProject.ext.dependencies["espresso-core"]
     implementation project(':network')
     implementation project(':tablayout')
-
     implementation rootProject.ext.dependencies["circleimageview"]
     implementation rootProject.ext.dependencies["fast-json"]
     implementation rootProject.ext.dependencies["av-loadingindicatorview"]
-
     implementation rootProject.ext.dependencies["butterknife"]
     annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
     implementation rootProject.ext.dependencies["NumberPickerView"]
+    implementation files('libs/umeng-analytics-v6.1.1.jar')
 
+    implementation 'com.google.android.gms:play-services:11.0.1'
+    implementation 'com.google.android.gms:play-services-ads:11.0.1'
+    implementation 'com.google.firebase:firebase-ads:11.0.1'
+
+    implementation 'com.android.support:multidex:1.0.3'
 }
+
+
+apply plugin: 'com.google.gms.google-services'

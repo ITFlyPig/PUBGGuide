@@ -19,9 +19,7 @@
             android:layout_height="16dp" />
         <TextView
             android:id="@+id/titletext"
-            android:layout_toRightOf="@id/iv_left_icon"
-            android:layout_marginLeft="5dp"
-            android:layout_centerVertical="true"
+            android:layout_centerInParent="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
@@ -50,11 +48,11 @@
                 android:paddingTop="15dp">
 
                 <TextView
-                    android:id="@+id/tv_title"
+                    android:id="@+id/tv_region_left"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="15dp"
-                    android:text="@string/region"
+                    android:text="@string/server"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_size" />
 
@@ -62,6 +60,7 @@
                     android:id="@+id/tv_region_middle_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
                     android:textColor="@color/text_sel_color"
                     android:textSize="@dimen/text_size" />
 
@@ -85,6 +84,7 @@
                 android:paddingTop="15dp">
 
                 <TextView
+                    android:id="@+id/tv_mode_left"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="15dp"
@@ -94,6 +94,7 @@
 
                 <TextView
                     android:id="@+id/tv_mode_middle_title"
+                    android:layout_centerInParent="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/text_sel_color"
@@ -118,7 +119,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:paddingLeft="15dp"
-                    android:text="吃鸡数"
+                    android:text="@string/wins"
                     android:textSize="@dimen/text_size" />
 
                 <TextView
@@ -148,7 +149,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:paddingLeft="15dp"
-                    android:text="吃鸡率"
+                    android:text="@string/win_lv"
                     android:textSize="@dimen/text_size" />
 
                 <TextView
@@ -178,7 +179,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:paddingLeft="15dp"
-                    android:text="前10数"
+                    android:text="@string/top_10"
                     android:textSize="@dimen/text_size" />
 
                 <TextView
@@ -208,7 +209,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:paddingLeft="15dp"
-                    android:text="最大击杀数"
+                    android:text="@string/most_kills"
                     android:textSize="@dimen/text_size" />
 
                 <TextView
@@ -238,7 +239,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:paddingLeft="15dp"
-                    android:text="最远距离击杀"
+                    android:text="@string/longest_kill"
                     android:textSize="@dimen/text_size" />
 
                 <TextView
@@ -268,7 +269,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:paddingLeft="15dp"
-                    android:text="爆头率"
+                    android:text="@string/headshot"
                     android:textSize="@dimen/text_size" />
 
                 <TextView
@@ -298,7 +299,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:paddingLeft="15dp"
-                    android:text="平均生存时间"
+                    android:text="@string/avg_time"
                     android:textSize="@dimen/text_size" />
 
                 <TextView

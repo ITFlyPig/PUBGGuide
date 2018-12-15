@@ -3,14 +3,14 @@ package com.igameguide.pubg.detail;
 import android.text.TextUtils;
 
 import com.alibaba.fastjson.JSON;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.callback.StringCallback;
+import com.lzy.okgo.model.Response;
 import com.igameguide.pubg.detail.bean.PlayerInfo;
 import com.igameguide.pubg.detail.bean.SeasonDetail;
 import com.igameguide.pubg.detail.bean.SeasonsBean;
 import com.igameguide.pubg.util.ConstantValue;
 import com.igameguide.pubg.util.ServerUrls;
-import com.lzy.okgo.OkGo;
-import com.lzy.okgo.callback.StringCallback;
-import com.lzy.okgo.model.Response;
 
 public class DetailModle {
     /**

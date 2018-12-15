@@ -6,7 +6,7 @@ import com.igameguide.pubg.detail.bean.SeasonDetail;
 
 public class DetailContract {
 
-    interface View extends BaseView<DetailContract.Presenter> {
+    interface View extends BaseView<Presenter> {
 
         void showLoading();
         void dismissLoading();
@@ -15,7 +15,7 @@ public class DetailContract {
 
     }
 
-    interface Presenter extends BasePresenter<DetailContract.View> {
+    interface Presenter extends BasePresenter<View> {
         /**
          * 查询战绩
          * @param region 服务器
