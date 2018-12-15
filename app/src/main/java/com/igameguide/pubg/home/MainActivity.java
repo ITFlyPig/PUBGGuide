@@ -11,6 +11,7 @@ import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.igameguide.pubg.R;
+import com.igameguide.pubg.video.VideoFragment;
 import com.umeng.analytics.MobclickAgent;
 
 import java.util.ArrayList;
@@ -52,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
                 mFragments.add(StandingsFragment.getInstance());
 
             } else {
-                mFragments.add(SimpleCardFragment.getInstance(title));
+                mFragments.add(VideoFragment.getInstance());
             }
 
             mTabEntities.add(new TabEntity(title, mIconSelectIds[i], mIconUnselectIds[i]));

@@ -6,6 +6,7 @@
     <color name="main_color">#252525</color>
     <color name="text_sel_color">#FCAD20</color>
     <color name="text_unsel_color">#B0B0B0</color>
+    <color name="text_video_tab_unsel_color">#000000</color>
     <color name="white">#FFFFFF</color>
     <color name="gray">#B0B0B0</color>
 </resources>
