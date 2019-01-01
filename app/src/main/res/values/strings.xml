@@ -23,4 +23,8 @@
     <string name="network_error">Network error</string>
     <string name="network_success">Network success</string>
     <string name="input_not_empty">Input can not be empty</string>
+    <string name="tip_title">It must view a video ad before download a high-definition wallpper.Or you subscrib app\'s VIP,then you can download directly.You can remove all ads in this app if you become a VIP.
+Congratulations you now,you get a chance for free trial VIP 7 days.</string>
+    <string name="view_ad">View a video ad </string>
+    <string name="trial">Free Trial VIP 7 Days</string>
 </resources>

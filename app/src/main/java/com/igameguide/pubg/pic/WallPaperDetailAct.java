@@ -19,6 +19,7 @@ import com.github.ybq.android.spinkit.sprite.Sprite;
 import com.github.ybq.android.spinkit.style.DoubleBounce;
 import com.igameguide.pubg.R;
 import com.igameguide.pubg.base.GlideApp;
+import com.igameguide.pubg.util.ConfirmDialog;
 import com.igameguide.pubg.util.ToastUtil;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.db.DownloadManager;
@@ -31,6 +32,9 @@ import java.io.File;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import me.leefeng.promptlibrary.PromptButton;
+import me.leefeng.promptlibrary.PromptButtonListener;
+import me.leefeng.promptlibrary.PromptDialog;
 
 public class WallPaperDetailAct extends AppCompatActivity implements View.OnClickListener {
 
@@ -45,6 +49,7 @@ public class WallPaperDetailAct extends AppCompatActivity implements View.OnClic
 
     private String mUrl;
     private String mTitle;
+    private PromptDialog mPromptDialog;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -90,18 +95,20 @@ public class WallPaperDetailAct extends AppCompatActivity implements View.OnClic
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.iv_btn_download:
-                final RxPermissions rxPermissions = new RxPermissions(this);
-                rxPermissions.request(Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                        Manifest.permission.READ_EXTERNAL_STORAGE)
-                        .subscribe(granted -> {
-                            if (granted) {
-                                //开始下载
-                                downloadPic();
-                            } else {
-                                ToastUtil.showToas("存储权限被禁止，无法保存");
-                            }
+//                final RxPermissions rxPermissions = new RxPermissions(this);
+//                rxPermissions.request(Manifest.permission.WRITE_EXTERNAL_STORAGE,
+//                        Manifest.permission.READ_EXTERNAL_STORAGE)
+//                        .subscribe(granted -> {
+//                            if (granted) {
+//                                //开始下载
+//                                downloadPic();
+//                            } else {
+//                                ToastUtil.showToas("存储权限被禁止，无法保存");
+//                            }
+//
+//                        });
 
-                        });
+                showDialog();
                 break;
         }
     }
@@ -141,6 +148,21 @@ public class WallPaperDetailAct extends AppCompatActivity implements View.OnClic
                     }
                 })
                 .start();
+    }
 
+    /**
+     * 显示弹窗
+     */
+    private void showDialog() {
+        if (mPromptDialog == null) {
+            mPromptDialog = new PromptDialog(this);
+        }
+        ConfirmDialog.show(this, () -> {
+            //观看广告
+
+        }, () -> {
+            //订阅
+
+        });
     }
 }
