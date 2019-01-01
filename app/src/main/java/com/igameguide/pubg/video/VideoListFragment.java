@@ -14,6 +14,8 @@ import android.view.ViewGroup;
 import com.igameguide.pubg.R;
 import com.igameguide.pubg.video.atapter.VideoListAdapter;
 import com.igameguide.pubg.video.bean.VideoItemBean;
+import com.wordplat.easydivider.RecyclerViewCornerRadius;
+import com.wordplat.easydivider.RecyclerViewGridDivider;
 
 import java.util.List;
 
@@ -52,7 +54,30 @@ public class VideoListFragment extends Fragment implements VideoListContract.Vie
         View v = inflater.inflate(R.layout.fragment_video_list, null);
         unbinder = ButterKnife.bind(this, v);
         recyclerView.setAdapter(mAdapter);
-        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
+
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
+
+        RecyclerViewCornerRadius cornerRadius = new RecyclerViewCornerRadius(recyclerView);
+        cornerRadius.setCornerRadius(20);
+        // 圆角背景必须第一个添加
+        recyclerView.addItemDecoration(cornerRadius);
+
+        // 九宫格列表添加分割线
+        final int margin = 10;
+        final int size = 20;
+        RecyclerViewGridDivider recyclerViewGridDivider = new RecyclerViewGridDivider(2, size, size);
+        recyclerViewGridDivider.setRowDividerMargin(margin * 2, margin * 2);
+        recyclerViewGridDivider.setColDividerMargin(margin, margin);
+        recyclerViewGridDivider.setShowLeftDivider(false);
+        recyclerViewGridDivider.setShowRightDivider(true);
+        recyclerViewGridDivider.setDividerClipToPadding(false);
+        recyclerViewGridDivider.setDividerSize(0);
+        recyclerViewGridDivider.setDividerColor(0x88000000);
+        recyclerViewGridDivider.setBackgroundColor(0xffffffff);
+
+        recyclerView.addItemDecoration(recyclerViewGridDivider);
+
+        recyclerView.setLayoutManager(gridLayoutManager);
 
         List<VideoItemBean> datas = mPresenter.getData("en");
         mAdapter.setmData(datas);
@@ -90,10 +115,9 @@ public class VideoListFragment extends Fragment implements VideoListContract.Vie
             if (bean == null || TextUtils.isEmpty(bean.link) || TextUtils.isEmpty(bean.link)) {
                 return;
             }
-
-            Intent intent=new Intent(VideoListFragment.this.getActivity(),YoutubeActivity.class);
-            intent.putExtra("url",bean.link);
-            intent.putExtra("title",bean.title);
+            Intent intent = new Intent(VideoListFragment.this.getActivity(), YoutubeActivity.class);
+            intent.putExtra("url", bean.link);
+            intent.putExtra("title", bean.title);
             startActivity(intent);
 
         }

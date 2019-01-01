@@ -64,6 +64,8 @@ dependencies {
     implementation rootProject.ext.dependencies["recyclerview-v7"]
     implementation rootProject.ext.dependencies["picasso"]
 
+    implementation 'com.wordplat:RecyclerViewEasyDivider:1.0.6'
+
 
 
 
