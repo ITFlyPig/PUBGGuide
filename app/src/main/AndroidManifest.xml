@@ -33,6 +33,8 @@
             android:name=".home.MainActivity"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity android:name=".video.YoutubeActivity" />
+
+        <activity android:name=".pic.WallPaperDetailAct" />
     </application>
 
 

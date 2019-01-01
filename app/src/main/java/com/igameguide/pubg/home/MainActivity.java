@@ -11,6 +11,7 @@ import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.igameguide.pubg.R;
+import com.igameguide.pubg.pic.WallPaperFragment;
 import com.igameguide.pubg.video.VideoFragment;
 import com.umeng.analytics.MobclickAgent;
 
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     CommonTabLayout tabLayout;
 
 
-    private String[] mTitles = new String[]{"战绩", "视频"};
+    private String[] mTitles = new String[]{"战绩", "视频", "壁纸"};
     private List<Fragment> mFragments;
     private int[] mIconUnselectIds = {
             R.mipmap.icon_data_unsel, R.mipmap.icon_guides_unsel,
@@ -51,9 +52,12 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
             String title = mTitles[i];
             if (i == 0) {
                 mFragments.add(StandingsFragment.getInstance());
-
-            } else {
+            } else if (i == 1){
                 mFragments.add(VideoFragment.getInstance());
+            } else if (i == 2) {
+                mFragments.add(WallPaperFragment.getInstance());
+            } else {
+                mFragments.add(StandingsFragment.getInstance());
             }
 
             mTabEntities.add(new TabEntity(title, mIconSelectIds[i], mIconUnselectIds[i]));

@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.igameguide.pubg.R;
+import com.igameguide.pubg.pic.bean.WallPaperBean;
 import com.igameguide.pubg.video.bean.VideoItemBean;
 
 import java.io.File;
@@ -15,6 +16,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.List;
 
 public class DBHepler {
     private static final String DATABASE_NAME = "pubg_guide";
@@ -157,6 +159,53 @@ public class DBHepler {
 
 
     /**
+     * 获取全部的壁纸
+     * @return
+     */
+    public List<WallPaperBean> getAllWallPapers() {
+        String sql = "select * from wallpaper";
+        Cursor cursor = mSQLiteDatabase.rawQuery(sql, null);
+        try {
+            return parseToWallPaperList(cursor);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
+
+
+    /**
+     * 获取壁纸的list
+     * @param cursor
+     * @return
+     */
+    private List<WallPaperBean> parseToWallPaperList(Cursor cursor){
+        if (cursor == null) {
+            return null;
+        }
+        List<WallPaperBean> wallPaperBeans = new ArrayList<>();
+        while (cursor.moveToNext()) {
+            WallPaperBean bean = new WallPaperBean();
+            if (cursor.getCount() != 0) {
+                bean.id = cursor.getString(cursor.getColumnIndex(WallPaperTable.ID));
+                bean.downloadUrl = cursor.getString(cursor.getColumnIndex(WallPaperTable.DOWNLOAD));
+                bean.preview = cursor.getString(cursor.getColumnIndex(WallPaperTable.PREVIEW));
+                bean.title = cursor.getString(cursor.getColumnIndex(WallPaperTable.TITLE));
+                wallPaperBeans.add(bean);
+            }
+        }
+
+        cursor.close();
+        return wallPaperBeans;
+    }
+
+
+
+
+
+    /**
      * videos表
      */
     public static class VideoTable {
@@ -166,6 +215,13 @@ public class DBHepler {
         public static final String CATEGORY = "category";
         public static final String LANGUAGE = "language";
 
+    }
+
+    public interface WallPaperTable {
+        String ID = "ID";
+        String PREVIEW = "wallpaper_preview";
+        String DOWNLOAD = "wallpaper_download";
+        String TITLE = "title";
     }
 
 }

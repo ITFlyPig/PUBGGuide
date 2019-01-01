@@ -2,6 +2,7 @@ package com.igameguide.pubg.base;
 
 import android.support.multidex.MultiDexApplication;
 
+import com.bumptech.glide.annotation.GlideModule;
 import com.google.android.gms.ads.MobileAds;
 import com.lzy.okgo.OkGo;
 import com.igameguide.pubg.R;
