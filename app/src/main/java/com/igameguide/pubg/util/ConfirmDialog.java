@@ -41,12 +41,12 @@ public class ConfirmDialog {
         // 确定
         confirm.setOnClickListener(v -> {
             dialog.dismiss();
-            confirmListenerOne.onConfirmClick();
+            confirmListenerTwo.onConfirmClick();
         });
         // 取消
         cancel.setOnClickListener(v -> {
             dialog.dismiss();
-            confirmListenerTwo.onConfirmClick();
+            confirmListenerOne.onConfirmClick();
         });
     }
 
