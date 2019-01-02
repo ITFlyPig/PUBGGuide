@@ -20,4 +20,13 @@
     <string name="network_error">网络请求错误</string>
     <string name="network_success">网络请求成功</string>
     <string name="input_not_empty">输入不能为空</string>
+    
+    <string name="hit_damage">命中伤害</string>
+    <string name="initial_bullet_speed">初始子弹速度</string>
+    <string name="body_hit_impact_power">击中身体冲击力</string>
+    <string name="zero_range">归零距离</string>
+    <string name="ammo_per_mag">弹夹容量</string>
+    <string name="time_between_shots">射击间隔</string>
+    <string name="firing_modes">射击模式</string>
+
 </resources>

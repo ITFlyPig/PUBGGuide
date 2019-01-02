@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     CommonTabLayout tabLayout;
 
 
-    private String[] mTitles = new String[]{"战绩", "视频", "壁纸"};
+    private String[] mTitles = new String[]{"战绩", "视频", "武器", "壁纸"};
     private List<Fragment> mFragments;
     private int[] mIconUnselectIds = {
             R.mipmap.icon_data_unsel, R.mipmap.icon_guides_unsel,

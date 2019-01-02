@@ -9,6 +9,7 @@ import android.util.Log;
 import com.igameguide.pubg.R;
 import com.igameguide.pubg.pic.bean.WallPaperBean;
 import com.igameguide.pubg.video.bean.VideoItemBean;
+import com.igameguide.pubg.weapon.bean.WeaponBean;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -203,6 +204,56 @@ public class DBHepler {
 
 
 
+    /**
+     * 据语言查询
+     * @param language
+     * @return
+     */
+    public ArrayList<WeaponBean> queryWeaponByLanguage(String language) {
+
+        String sql="select * from guns where language='" + language +"'";
+        Cursor cursor = mSQLiteDatabase.rawQuery(sql, null);
+        try {
+            return parseToWeaponBeans(cursor);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
+    /**
+     * 据游标查询得到对应的bean
+     * @param cursor
+     * @return
+     */
+    public ArrayList<WeaponBean> parseToWeaponBeans(Cursor cursor) {
+        ArrayList<WeaponBean> beans = new ArrayList<WeaponBean>();
+        while (cursor.moveToNext()) {
+            WeaponBean bean = new WeaponBean();
+            if (cursor != null && cursor.getCount() != 0) {
+                bean.name = cursor.getString(cursor.getColumnIndex(GunsTable.NAME));
+                bean.hitDamage = cursor.getString(cursor.getColumnIndex(GunsTable.HIT_DAMAGE));
+                bean.initBulletSpeed = cursor.getString(cursor.getColumnIndex(GunsTable.INITIAL_BULLET_SPEED));
+                bean.bodyHitImpactPower = cursor.getString(cursor.getColumnIndex(GunsTable.BODY_HIT_IMPACT_POWER));
+                bean.zeroRange = cursor.getString(cursor.getColumnIndex(GunsTable.ZERO_RANGE));
+                bean.ammoPerMag = cursor.getString(cursor.getColumnIndex(GunsTable.AMMO_PER_MAG));
+                bean.timeBetweenShots = cursor.getString(cursor.getColumnIndex(GunsTable.TIME_BETWEEN_SHOTS));
+                bean.firingModes = cursor.getString(cursor.getColumnIndex(GunsTable.FIRING_MODES));
+                bean.shotCount = cursor.getString(cursor.getColumnIndex(GunsTable.SHOT_COUNT));
+                bean.category = cursor.getString(cursor.getColumnIndex(GunsTable.CATEGORY));
+                bean.logoId = cursor.getString(cursor.getColumnIndex(GunsTable.LOGO_ID));
+                bean.lanuage = cursor.getString(cursor.getColumnIndex(GunsTable.LANGUAGE));
+                beans.add(bean);
+            }
+        }
+        Log.d("wyl", "查询到的数据：" + beans.size());
+        if (cursor != null) {
+            cursor.close();
+        }
+        return beans;
+    }
+
 
 
     /**
@@ -224,4 +275,19 @@ public class DBHepler {
         String TITLE = "title";
     }
 
+
+    public interface GunsTable {
+       String NAME= "Name";
+       String HIT_DAMAGE = "Hit_Damage";
+       String INITIAL_BULLET_SPEED = "Initial_Bullet_Speed";
+       String BODY_HIT_IMPACT_POWER = "Body_Hit_Impact_Power";
+       String ZERO_RANGE = "Zero_Range";
+       String AMMO_PER_MAG = "Ammo_Per_Mag";
+       String TIME_BETWEEN_SHOTS = "Time_Between_Shots";
+       String FIRING_MODES = "Firing_Modes";
+       String SHOT_COUNT = "Shot_Count";
+       String CATEGORY = "Category";
+       String LOGO_ID = "logo_id";
+       String LANGUAGE ="language";
+    }
 }

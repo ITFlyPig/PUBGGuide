@@ -27,4 +27,12 @@
 Congratulations you now,you get a chance for free trial VIP 7 days.</string>
     <string name="view_ad">View a video ad </string>
     <string name="trial">Free Trial VIP 7 Days</string>
+
+    <string name="hit_damage">命中伤害</string>
+    <string name="initial_bullet_speed">初始子弹速度</string>
+    <string name="body_hit_impact_power">击中身体冲击力</string>
+    <string name="zero_range">归零距离</string>
+    <string name="ammo_per_mag">弹夹容量</string>
+    <string name="time_between_shots">射击间隔</string>
+    <string name="firing_modes">射击模式</string>
 </resources>
