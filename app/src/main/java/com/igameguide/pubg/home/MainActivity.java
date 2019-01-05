@@ -13,6 +13,7 @@ import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.igameguide.pubg.R;
 import com.igameguide.pubg.pic.WallPaperFragment;
 import com.igameguide.pubg.video.VideoFragment;
+import com.igameguide.pubg.weapon.WeaponFragment;
 import com.umeng.analytics.MobclickAgent;
 
 import java.util.ArrayList;
@@ -29,10 +30,10 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     private List<Fragment> mFragments;
     private int[] mIconUnselectIds = {
             R.mipmap.icon_data_unsel, R.mipmap.icon_guides_unsel,
-            R.mipmap.icon_video_unsel, R.mipmap.icon_weapon_unsel, R.mipmap.icon_wallpaper_nusel};
+             R.mipmap.icon_weapon_unsel, R.mipmap.icon_video_unsel, R.mipmap.icon_wallpaper_nusel};
     private int[] mIconSelectIds = {
             R.mipmap.icon_data_sel, R.mipmap.icon_guides_sel,
-            R.mipmap.icon_video_sel, R.mipmap.icon_weapon_sel, R.mipmap.icon_wallpaper_sel};
+             R.mipmap.icon_weapon_sel, R.mipmap.icon_video_sel, R.mipmap.icon_wallpaper_sel};
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
 
 
@@ -55,6 +56,8 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
             } else if (i == 1){
                 mFragments.add(VideoFragment.getInstance());
             } else if (i == 2) {
+                mFragments.add(WeaponFragment.getInstance());
+            } else if (i == 3) {
                 mFragments.add(WallPaperFragment.getInstance());
             } else {
                 mFragments.add(StandingsFragment.getInstance());

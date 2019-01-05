@@ -9,4 +9,5 @@
     <color name="text_video_tab_unsel_color">#000000</color>
     <color name="white">#FFFFFF</color>
     <color name="gray">#B0B0B0</color>
+    <color name="divider_color">#F8F8F8</color>
 </resources>

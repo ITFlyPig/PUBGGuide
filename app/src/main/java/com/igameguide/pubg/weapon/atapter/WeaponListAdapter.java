@@ -49,7 +49,7 @@ public class WeaponListAdapter extends RecyclerView.Adapter<WeaponListAdapter.VH
         AssetManager assetManager = mContext.getAssets();
         InputStream is = null;
         try {
-            is = assetManager.open("images/" + itemBean.logoId);
+            is = assetManager.open("images/" + itemBean.logoId + ".png");
         } catch (IOException e) {
             e.printStackTrace();
         }

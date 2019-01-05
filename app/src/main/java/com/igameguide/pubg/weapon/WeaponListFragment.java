@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.igameguide.pubg.R;
+import com.igameguide.pubg.base.PubgApplication;
 import com.igameguide.pubg.video.VideoListContract;
 import com.igameguide.pubg.video.VideoListPresenter;
 import com.igameguide.pubg.video.YoutubeActivity;
@@ -19,6 +20,7 @@ import com.igameguide.pubg.video.atapter.VideoListAdapter;
 import com.igameguide.pubg.video.bean.VideoItemBean;
 import com.igameguide.pubg.weapon.atapter.WeaponListAdapter;
 import com.igameguide.pubg.weapon.bean.WeaponBean;
+import com.igameguide.pubg.widget.EasyDivider;
 import com.wordplat.easydivider.RecyclerViewCornerRadius;
 import com.wordplat.easydivider.RecyclerViewGridDivider;
 
@@ -60,32 +62,17 @@ public class WeaponListFragment extends Fragment implements WeaponListContract.V
         unbinder = ButterKnife.bind(this, v);
         recyclerView.setAdapter(mAdapter);
 
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 3);
 
-        RecyclerViewCornerRadius cornerRadius = new RecyclerViewCornerRadius(recyclerView);
-        cornerRadius.setCornerRadius(20);
-        // 圆角背景必须第一个添加
-        recyclerView.addItemDecoration(cornerRadius);
+        EasyDivider easyDivider = new EasyDivider();
 
-        // 九宫格列表添加分割线
-        final int margin = 10;
-        final int size = 20;
-        RecyclerViewGridDivider recyclerViewGridDivider = new RecyclerViewGridDivider(2, size, size);
-        recyclerViewGridDivider.setRowDividerMargin(margin * 2, margin * 2);
-        recyclerViewGridDivider.setColDividerMargin(margin, margin);
-        recyclerViewGridDivider.setShowLeftDivider(false);
-        recyclerViewGridDivider.setShowRightDivider(true);
-        recyclerViewGridDivider.setDividerClipToPadding(false);
-        recyclerViewGridDivider.setDividerSize(0);
-        recyclerViewGridDivider.setDividerColor(0x88000000);
-        recyclerViewGridDivider.setBackgroundColor(0xffffffff);
-
-        recyclerView.addItemDecoration(recyclerViewGridDivider);
+        recyclerView.addItemDecoration(easyDivider);
 
         recyclerView.setLayoutManager(gridLayoutManager);
 
-        List<WeaponBean> datas = mPresenter.getData("en");
-        mAdapter.setmData(datas);
+        getData();
+
+
 
 
         return v;
@@ -126,4 +113,21 @@ public class WeaponListFragment extends Fragment implements WeaponListContract.V
 
         }
     };
+
+    /**
+     * 异步的获取数据，避免卡顿
+     */
+    private void getData() {
+
+        PubgApplication.getInstance().addTask(() -> {
+            List<WeaponBean> datas = mPresenter.getData("en");
+            if (isAdded()) {
+               getActivity().runOnUiThread(() -> mAdapter.setmData(datas));
+            }
+
+        });
+
+
+
+    }
 }
