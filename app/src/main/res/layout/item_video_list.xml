@@ -2,14 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/ll_whole"
     android:background="@color/white"
     android:orientation="vertical">
     <com.igameguide.pubg.widget.PubgImageView
         android:id="@+id/iv_img"
-        android:scaleType="centerInside"
+        android:scaleType="centerCrop"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        app:isUseScale="true"
+        app:scale="1.33"/>
+
+
     <TextView
         android:id="@+id/tv_title"
         android:maxLines="2"

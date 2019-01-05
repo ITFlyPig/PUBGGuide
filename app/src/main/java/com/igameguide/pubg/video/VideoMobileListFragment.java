@@ -26,7 +26,7 @@ import butterknife.Unbinder;
 
 
 @SuppressLint("ValidFragment")
-public class VideoListFragment extends Fragment implements VideoListContract.View {
+public class VideoMobileListFragment extends Fragment implements VideoListContract.View {
 
 
     @BindView(R.id.recyclerView)
@@ -35,8 +35,8 @@ public class VideoListFragment extends Fragment implements VideoListContract.Vie
     private VideoListContract.Presenter mPresenter;
     private VideoListAdapter mAdapter;
 
-    public static VideoListFragment getInstance() {
-        VideoListFragment sf = new VideoListFragment();
+    public static VideoMobileListFragment getInstance() {
+        VideoMobileListFragment sf = new VideoMobileListFragment();
         return sf;
     }
 
@@ -61,7 +61,7 @@ public class VideoListFragment extends Fragment implements VideoListContract.Vie
         recyclerView.addItemDecoration(easyDivider);
         recyclerView.setLayoutManager(gridLayoutManager);
 
-        List<VideoItemBean> datas = mPresenter.getPcData("en");
+        List<VideoItemBean> datas = mPresenter.getModileData("en");
         mAdapter.setmData(datas);
 
 
@@ -97,7 +97,7 @@ public class VideoListFragment extends Fragment implements VideoListContract.Vie
             if (bean == null || TextUtils.isEmpty(bean.link) || TextUtils.isEmpty(bean.link)) {
                 return;
             }
-            Intent intent = new Intent(VideoListFragment.this.getActivity(), YoutubeActivity.class);
+            Intent intent = new Intent(VideoMobileListFragment.this.getActivity(), YoutubeActivity.class);
             intent.putExtra("url", bean.link);
             intent.putExtra("title", bean.title);
             startActivity(intent);

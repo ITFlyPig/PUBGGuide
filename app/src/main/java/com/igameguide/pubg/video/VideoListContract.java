@@ -13,7 +13,9 @@ public class VideoListContract {
     }
 
     interface Presenter extends BasePresenter<View> {
-        List<VideoItemBean> getData(String language);
+        List<VideoItemBean> getPcData(String language);
+        List<VideoItemBean> getModileData(String language);
+        List<VideoItemBean> getFunnyData(String language);
     }
 
 

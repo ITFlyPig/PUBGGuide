@@ -11,15 +11,39 @@ import java.util.List;
 public class VideoListModle {
 
     /**
-     * 据语言查询数据
+     * 查询PC视频
      * @param language
      * @return
      */
-    public List<VideoItemBean> getDataByLanguage(String language) {
+    public List<VideoItemBean> getPcDataByLanguage(String language) {
         if (TextUtils.isEmpty(language)) {
             return null;
         }
         DBHepler.getInstance().OpenDatabase(PubgApplication.getInstance());
-        return DBHepler.getInstance().queryByLanguage(language);
+        return DBHepler.getInstance().queryVideoBy(language, "PC");
+    }
+    /**
+     * 查询手游视频
+     * @param language
+     * @return
+     */
+    public List<VideoItemBean> getMobileDataByLanguage(String language) {
+        if (TextUtils.isEmpty(language)) {
+            return null;
+        }
+        DBHepler.getInstance().OpenDatabase(PubgApplication.getInstance());
+        return DBHepler.getInstance().queryVideoBy(language, "Mobile");
+    }
+    /**
+     * 查询搞笑视频
+     * @param language
+     * @return
+     */
+    public List<VideoItemBean> getFunnyDataByLanguage(String language) {
+        if (TextUtils.isEmpty(language)) {
+            return null;
+        }
+        DBHepler.getInstance().OpenDatabase(PubgApplication.getInstance());
+        return DBHepler.getInstance().queryVideoBy(language, "Funny");
     }
 }

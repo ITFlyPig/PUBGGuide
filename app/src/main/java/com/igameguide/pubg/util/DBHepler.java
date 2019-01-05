@@ -120,9 +120,9 @@ public class DBHepler {
      * @param language
      * @return
      */
-    public ArrayList<VideoItemBean> queryByLanguage(String language) {
+    public ArrayList<VideoItemBean> queryVideoBy(String language, String categroy) {
 
-        String sql="select * from videos where language='" + language +"'";
+        String sql="select * from videos where language='" + language +"' and categroy = '" + categroy + "'";
         Cursor cursor = mSQLiteDatabase.rawQuery(sql, null);
         try {
             return parseToBeans(cursor);

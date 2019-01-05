@@ -63,8 +63,10 @@ public class VideoFragment extends Fragment implements View.OnClickListener {
         for (int i = 0; i < mTitles.length; i++) {
             if (i == 0) {
                 mFragments.add(VideoListFragment.getInstance());
-            } else {
-                mFragments.add(SimpleCardFragment.getInstance(mTitles[i]));
+            } else if (i == 1) {
+                mFragments.add(VideoMobileListFragment.getInstance());
+            } else if (i == 2) {
+                mFragments.add(VideoFunnyListFragment.getInstance());
             }
             mTabEntities.add(new VideoTabEntity(mTitles[i]));
         }

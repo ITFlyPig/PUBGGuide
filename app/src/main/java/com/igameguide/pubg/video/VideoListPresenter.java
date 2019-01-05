@@ -10,10 +10,6 @@ public class VideoListPresenter implements VideoListContract.Presenter {
     private VideoListModle mModle;
 
 
-    @Override
-    public List<VideoItemBean> getData(String language) {
-        return mModle.getDataByLanguage(language);
-    }
 
     @Override
     public void start() {
@@ -25,5 +21,20 @@ public class VideoListPresenter implements VideoListContract.Presenter {
         mView.setPresenter(this);
         mModle = new VideoListModle();
 
+    }
+
+    @Override
+    public List<VideoItemBean> getPcData(String language) {
+        return mModle.getPcDataByLanguage(language);
+    }
+
+    @Override
+    public List<VideoItemBean> getModileData(String language) {
+        return mModle.getMobileDataByLanguage(language);
+    }
+
+    @Override
+    public List<VideoItemBean> getFunnyData(String language) {
+        return mModle.getFunnyDataByLanguage(language);
     }
 }
