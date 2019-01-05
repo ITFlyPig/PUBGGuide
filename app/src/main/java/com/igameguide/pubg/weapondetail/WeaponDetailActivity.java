@@ -12,11 +12,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.igameguide.pubg.R;
 import com.igameguide.pubg.base.GlideApp;
 import com.igameguide.pubg.util.ConstantValue;
+import com.igameguide.pubg.util.systembar.SystemBarHelper;
 import com.igameguide.pubg.weapon.bean.WeaponBean;
 
 import java.io.IOException;
@@ -34,14 +36,22 @@ public class WeaponDetailActivity extends AppCompatActivity implements View.OnCl
     ImageView ivBack;
     @BindView(R.id.title)
     TextView title;
+    @BindView(R.id.tl_title)
+    RelativeLayout tlTitle;
     private WeaponBean mWeaponBean;
     private int mWeaponType;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        /*
+         * 设置沉浸模式
+         */
+//        SystemBarHelper.setAdaptStatusBar(getWindow());
+
         setContentView(R.layout.activity_weapondetail);
         ButterKnife.bind(this);
+//        SystemBarHelper.updateAdaptStatusBar(tlTitle);
         mWeaponBean = (WeaponBean) getIntent().getSerializableExtra("data");
         mWeaponType = getIntent().getIntExtra(ConstantValue.IntentKey.WEAPON_TYPE, 0);
 

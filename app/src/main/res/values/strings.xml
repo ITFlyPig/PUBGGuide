@@ -36,4 +36,5 @@ Congratulations you now,you get a chance for free trial VIP 7 days.</string>
     <string name="time_between_shots">射击间隔</string>
     <string name="firing_modes">射击模式</string>
     <string name="weapon">武器</string>
+    <string name="notification">Notification</string>
 </resources>
