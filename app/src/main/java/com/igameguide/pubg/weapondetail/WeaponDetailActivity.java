@@ -47,11 +47,11 @@ public class WeaponDetailActivity extends AppCompatActivity implements View.OnCl
         /*
          * 设置沉浸模式
          */
-//        SystemBarHelper.setAdaptStatusBar(getWindow());
+        SystemBarHelper.setAdaptStatusBar(getWindow());
 
         setContentView(R.layout.activity_weapondetail);
         ButterKnife.bind(this);
-//        SystemBarHelper.updateAdaptStatusBar(tlTitle);
+        SystemBarHelper.updateAdaptStatusBar(tlTitle);
         mWeaponBean = (WeaponBean) getIntent().getSerializableExtra("data");
         mWeaponType = getIntent().getIntExtra(ConstantValue.IntentKey.WEAPON_TYPE, 0);
 

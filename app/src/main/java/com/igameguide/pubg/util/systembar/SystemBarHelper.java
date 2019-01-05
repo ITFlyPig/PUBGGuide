@@ -461,18 +461,6 @@ public class SystemBarHelper {
         }
     }
 
-    /**
-     * 正式设置沉浸式之前设置一下
-     * @param titleBar
-     */
-    public static void updateAdaptStatusBar(View titleBar) {
-        if (titleBar == null) {
-            return;
-        }
-        int statusBarH = SystemBarHelper.getStatusBarHeight(titleBar.getContext());
-        titleBar.setPadding(titleBar.getPaddingLeft(), titleBar.getPaddingTop() + statusBarH, titleBar.getPaddingRight(), titleBar.getPaddingBottom());
-        
-    }
 
     /**
      * dialog 专用 设置透明状态栏
