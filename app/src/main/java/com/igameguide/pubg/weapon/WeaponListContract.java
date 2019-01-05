@@ -15,6 +15,8 @@ public class WeaponListContract {
 
     interface Presenter extends BasePresenter<View> {
         List<WeaponBean> getData(String language);
+        List<WeaponBean> getThrowWeaponData(String language);
+        List<WeaponBean> getMeleeData(String language);
     }
 
 

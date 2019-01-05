@@ -62,7 +62,11 @@ public class WeaponFragment extends Fragment implements View.OnClickListener {
         for (int i = 0; i < mTitles.length; i++) {
             if (i == 0) {
                 mFragments.add(WeaponListFragment.getInstance());
-            } else {
+            } else if (i == 1){
+                mFragments.add(ThrowableWeaponListFragment.getInstance());
+            } else if (i == 2) {
+                mFragments.add(MeleeWeaponListFragment.getInstance());
+            } else  {
                 mFragments.add(SimpleCardFragment.getInstance(mTitles[i]));
             }
             mTabEntities.add(new VideoTabEntity(mTitles[i]));

@@ -16,6 +16,16 @@ public class WeaponListPresenter implements WeaponListContract.Presenter {
     }
 
     @Override
+    public List<WeaponBean> getThrowWeaponData(String language) {
+        return mModle.getThrowWeaponDataByLanguage(language);
+    }
+
+    @Override
+    public List<WeaponBean> getMeleeData(String language) {
+        return mModle.getMeleeWeaponDataByLanguage(language);
+    }
+
+    @Override
     public void start() {
 
     }

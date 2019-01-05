@@ -67,7 +67,6 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         }
 
         viewPager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
-
         tabLayout.setTabData(mTabEntities);
         tabLayout.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
@@ -139,6 +138,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         public Fragment getItem(int position) {
             return mFragments.get(position);
         }
+
     }
 
 

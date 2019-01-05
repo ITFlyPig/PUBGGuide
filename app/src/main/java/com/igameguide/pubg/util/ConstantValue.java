@@ -12,5 +12,12 @@ public class ConstantValue {
 
     public interface IntentKey {
         String PLAYER_NAME = "palyer_name";
+        String WEAPON_TYPE = "weapon_type";
+    }
+
+    public interface WeaponType {
+        int GUN = 1;//枪
+        int THROW_WEAPON = 2;//投掷武器
+        int MELEE_WEAPON = 3;//近战武器
     }
 }

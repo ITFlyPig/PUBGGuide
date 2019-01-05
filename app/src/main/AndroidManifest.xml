@@ -35,6 +35,8 @@
         <activity android:name=".video.YoutubeActivity" />
 
         <activity android:name=".pic.WallPaperDetailAct" />
+
+        <activity android:name=".weapondetail.WeaponDetailActivity" />
     </application>
 
 

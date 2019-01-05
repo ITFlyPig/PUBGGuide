@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,17 +13,11 @@ import android.view.ViewGroup;
 import com.igameguide.pubg.R;
 import com.igameguide.pubg.base.PubgApplication;
 import com.igameguide.pubg.util.ConstantValue;
-import com.igameguide.pubg.video.VideoListContract;
-import com.igameguide.pubg.video.VideoListPresenter;
 import com.igameguide.pubg.video.YoutubeActivity;
-import com.igameguide.pubg.video.atapter.VideoListAdapter;
-import com.igameguide.pubg.video.bean.VideoItemBean;
 import com.igameguide.pubg.weapon.atapter.WeaponListAdapter;
 import com.igameguide.pubg.weapon.bean.WeaponBean;
 import com.igameguide.pubg.weapondetail.WeaponDetailActivity;
 import com.igameguide.pubg.widget.EasyDivider;
-import com.wordplat.easydivider.RecyclerViewCornerRadius;
-import com.wordplat.easydivider.RecyclerViewGridDivider;
 
 import java.util.List;
 
@@ -34,7 +27,7 @@ import butterknife.Unbinder;
 
 
 @SuppressLint("ValidFragment")
-public class WeaponListFragment extends Fragment implements WeaponListContract.View {
+public class MeleeWeaponListFragment extends Fragment implements WeaponListContract.View {
 
 
     @BindView(R.id.recyclerView)
@@ -43,8 +36,8 @@ public class WeaponListFragment extends Fragment implements WeaponListContract.V
     private WeaponListContract.Presenter mPresenter;
     private WeaponListAdapter mAdapter;
 
-    public static WeaponListFragment getInstance() {
-        WeaponListFragment sf = new WeaponListFragment();
+    public static MeleeWeaponListFragment getInstance() {
+        MeleeWeaponListFragment sf = new MeleeWeaponListFragment();
         return sf;
     }
 
@@ -107,9 +100,9 @@ public class WeaponListFragment extends Fragment implements WeaponListContract.V
         if (bean == null) {
             return;
         }
-        Intent intent = new Intent(WeaponListFragment.this.getActivity(), WeaponDetailActivity.class);
+        Intent intent = new Intent(MeleeWeaponListFragment.this.getActivity(), WeaponDetailActivity.class);
         intent.putExtra("data", bean);
-        intent.putExtra(ConstantValue.IntentKey.WEAPON_TYPE, ConstantValue.WeaponType.GUN);
+        intent.putExtra(ConstantValue.IntentKey.WEAPON_TYPE, ConstantValue.WeaponType.MELEE_WEAPON);
         startActivity(intent);
 
     };
@@ -120,7 +113,7 @@ public class WeaponListFragment extends Fragment implements WeaponListContract.V
     private void getData() {
 
         PubgApplication.getInstance().addTask(() -> {
-            List<WeaponBean> datas = mPresenter.getData("en");
+            List<WeaponBean> datas = mPresenter.getMeleeData("en");
             if (isAdded()) {
                getActivity().runOnUiThread(() -> mAdapter.setmData(datas));
             }

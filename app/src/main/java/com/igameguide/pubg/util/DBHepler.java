@@ -205,7 +205,7 @@ public class DBHepler {
 
 
     /**
-     * 据语言查询
+     * 据语言查询枪
      * @param language
      * @return
      */
@@ -257,6 +257,104 @@ public class DBHepler {
 
 
     /**
+     * 据语言查投掷物
+     * @param language
+     * @return
+     */
+    public ArrayList<WeaponBean> queryThrowWeaponByLanguage(String language) {
+
+        String sql="select * from throwable where language='" + language +"'";
+        Cursor cursor = mSQLiteDatabase.rawQuery(sql, null);
+        try {
+            return parseToThrowWeaponBeans(cursor);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
+    /**
+     * 据游标查询得到对应的bean
+     * @param cursor
+     * @return
+     */
+    public ArrayList<WeaponBean> parseToThrowWeaponBeans(Cursor cursor) {
+        ArrayList<WeaponBean> beans = new ArrayList<WeaponBean>();
+        while (cursor.moveToNext()) {
+            WeaponBean bean = new WeaponBean();
+            if (cursor != null && cursor.getCount() != 0) {
+                bean.name = cursor.getString(cursor.getColumnIndex(ThrowableWeaponTable.NAME));
+                bean.category = cursor.getString(cursor.getColumnIndex(ThrowableWeaponTable.CATEGORY));
+                bean.logoId = cursor.getString(cursor.getColumnIndex(ThrowableWeaponTable.LOGO_ID));
+                bean.lanuage = cursor.getString(cursor.getColumnIndex(ThrowableWeaponTable.LANGUAGE));
+                bean.throwTime = cursor.getString(cursor.getColumnIndex(ThrowableWeaponTable.THROW_TIME));
+                bean.throwCooldownDuration = cursor.getString(cursor.getColumnIndex(ThrowableWeaponTable.THROW_COOLDOWN_DURATION));
+                bean.fireDelay = cursor.getString(cursor.getColumnIndex(ThrowableWeaponTable.FIRE_DELAY));
+                bean.timeLimit = cursor.getString(cursor.getColumnIndex(ThrowableWeaponTable.TIME_LIMIT));
+                bean.detonation = cursor.getString(cursor.getColumnIndex(ThrowableWeaponTable.DETONATION));
+                bean.explosionDelay = cursor.getString(cursor.getColumnIndex(ThrowableWeaponTable.EXPLOSION_DELAY));
+                beans.add(bean);
+            }
+        }
+        Log.d("wyl", "查询到的数据：" + beans.size());
+        if (cursor != null) {
+            cursor.close();
+        }
+        return beans;
+    }
+
+
+    /**
+     * 据语言查投掷物
+     * @param language
+     * @return
+     */
+    public ArrayList<WeaponBean> queryMeleeByLanguage(String language) {
+
+        String sql="select * from melee where language='" + language +"'";
+        Cursor cursor = mSQLiteDatabase.rawQuery(sql, null);
+        try {
+            return parseToMeleeBeans(cursor);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
+    /**
+     * 据游标查询得到对应的bean
+     * @param cursor
+     * @return
+     */
+    public ArrayList<WeaponBean> parseToMeleeBeans(Cursor cursor) {
+        ArrayList<WeaponBean> beans = new ArrayList<WeaponBean>();
+        while (cursor.moveToNext()) {
+            WeaponBean bean = new WeaponBean();
+            if (cursor != null && cursor.getCount() != 0) {
+                bean.name = cursor.getString(cursor.getColumnIndex(MeleeWeapon.NAME));
+                bean.category = cursor.getString(cursor.getColumnIndex(MeleeWeapon.CATEGORY));
+                bean.logoId = cursor.getString(cursor.getColumnIndex(MeleeWeapon.LOGO_ID));
+                bean.lanuage = cursor.getString(cursor.getColumnIndex(MeleeWeapon.LANGUAGE));
+                bean.damage = cursor.getString(cursor.getColumnIndex(MeleeWeapon.DAMEGE));
+                bean.impact = cursor.getString(cursor.getColumnIndex(MeleeWeapon.IMPACT));
+                bean.hitRangeLeeway = cursor.getString(cursor.getColumnIndex(MeleeWeapon.HIT_RANGE_LEEWAY));
+
+                beans.add(bean);
+            }
+        }
+        Log.d("wyl", "查询到的数据：" + beans.size());
+        if (cursor != null) {
+            cursor.close();
+        }
+        return beans;
+    }
+
+
+
+
+    /**
      * videos表
      */
     public static class VideoTable {
@@ -289,5 +387,31 @@ public class DBHepler {
        String CATEGORY = "Category";
        String LOGO_ID = "logo_id";
        String LANGUAGE ="language";
+    }
+
+    public interface ThrowableWeaponTable {//投掷物表
+        String NAME = "Name";
+        String THROW_TIME = "Throw_Time";
+        String THROW_COOLDOWN_DURATION = "Throw_Cooldown_Duration";
+        String FIRE_DELAY = "Fire_Delay";
+        String TIME_LIMIT = "Activation_Time_Limit";
+        String DETONATION  = "Detonation";
+        String EXPLOSION_DELAY = "Detonation";
+        String CATEGORY = "Category";
+        String LOGO_ID = "logo_id";
+        String LANGUAGE = "logo_id";
+
+    }
+
+    public interface MeleeWeapon {//近战武器
+        String NAME = "Name";
+        String DAMEGE = "Damage";
+        String IMPACT  = "Impact";
+        String HIT_RANGE_LEEWAY  = "Hit_Range_Leeway";
+        String CATEGORY = "Category";
+        String LOGO_ID = "logo_id";
+        String LANGUAGE = "language";
+
+
     }
 }

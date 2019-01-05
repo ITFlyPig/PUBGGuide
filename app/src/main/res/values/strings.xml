@@ -35,4 +35,5 @@ Congratulations you now,you get a chance for free trial VIP 7 days.</string>
     <string name="ammo_per_mag">弹夹容量</string>
     <string name="time_between_shots">射击间隔</string>
     <string name="firing_modes">射击模式</string>
+    <string name="weapon">武器</string>
 </resources>
