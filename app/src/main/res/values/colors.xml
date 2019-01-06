@@ -10,4 +10,7 @@
     <color name="white">#FFFFFF</color>
     <color name="gray">#B0B0B0</color>
     <color name="divider_color">#F8F8F8</color>
+    <color name="color_value">#CBCED3</color>
+    <color name="color_key">#888C92</color>
+    <color name="color_item_bg">#9c2A3950</color>
 </resources>

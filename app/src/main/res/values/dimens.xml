@@ -8,4 +8,8 @@
     <dimen name="et_padding_bottom">8dp</dimen>
     <dimen name="grid_h_space">8dp</dimen>
     <dimen name="grid_v_space">8dp</dimen>
+    <dimen name="tv_key_size">12dp</dimen>
+    <dimen name="tv_value_size">16dp</dimen>
+    <dimen name="item_h">75dp</dimen>
+
 </resources>
