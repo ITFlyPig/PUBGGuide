@@ -20,7 +20,10 @@ import com.github.ybq.android.spinkit.sprite.Sprite;
 import com.github.ybq.android.spinkit.style.DoubleBounce;
 import com.statstracker.forpubggame.R;
 import com.statstracker.forpubggame.base.GlideApp;
+import com.statstracker.forpubggame.home.EventModel;
 import com.statstracker.forpubggame.util.ConfirmDialog;
+import com.statstracker.forpubggame.util.Constant;
+import com.statstracker.forpubggame.util.PayStatusUtil;
 import com.statstracker.forpubggame.util.ToastUtil;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.Progress;
@@ -34,6 +37,8 @@ import com.unity3d.services.monetization.UnityMonetization;
 import com.unity3d.services.monetization.placementcontent.ads.IShowAdListener;
 import com.unity3d.services.monetization.placementcontent.ads.ShowAdPlacementContent;
 import com.unity3d.services.monetization.placementcontent.core.PlacementContent;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.io.File;
 
@@ -122,6 +127,10 @@ public class WallPaperDetailAct extends AppCompatActivity implements View.OnClic
         switch (v.getId()) {
             case R.id.iv_btn_download:
 
+                if (PayStatusUtil.isSubAvailable()) {
+                    isOk = true;
+                }
+
                 if (!isOk) {
                     showDialog();
                 } else {
@@ -192,6 +201,7 @@ public class WallPaperDetailAct extends AppCompatActivity implements View.OnClic
             viewAd();
         }, () -> {
             //订阅
+            EventBus.getDefault().post(new EventModel(Constant.Event.QUERY_SUB_AND_BUY));
 
         });
     }

@@ -92,6 +92,11 @@ dependencies {
 
     //unity广告
     implementation (name:'unity-ads', ext:'aar')
+
+    //谷歌内购
+    implementation 'com.android.billingclient:billing:1.0'
+
+    implementation 'org.greenrobot:eventbus:3.0.0'
 }
 
 

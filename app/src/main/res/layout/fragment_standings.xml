@@ -53,8 +53,30 @@
         android:textSize="@dimen/text_size"
         />
 
+    <TextView
+        android:id="@+id/tv_sub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_btn"
+        android:text="@string/sub"
+        android:textColor="@color/text_sel_color"
+        android:gravity="center"
+        android:paddingTop="@dimen/btn_padding_top"
+        android:paddingBottom="@dimen/btn_padding_bottom"
+        android:textSize="@dimen/text_size"
+        />
 
-
+    <TextView
+        android:id="@+id/tv_policy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="14sp"
+        android:textColor="#3a9be7"
+        android:text="@string/policy"/>
 
 
 </LinearLayout>

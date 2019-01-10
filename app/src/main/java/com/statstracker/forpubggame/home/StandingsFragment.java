@@ -2,6 +2,7 @@ package com.statstracker.forpubggame.home;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
@@ -18,8 +19,11 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.statstracker.forpubggame.R;
 import com.statstracker.forpubggame.detail.DetailActivity;
+import com.statstracker.forpubggame.util.Constant;
 import com.statstracker.forpubggame.util.ConstantValue;
 import com.statstracker.forpubggame.util.ToastUtil;
+
+import org.greenrobot.eventbus.EventBus;
 
 
 @SuppressLint("ValidFragment")
@@ -27,7 +31,9 @@ public class StandingsFragment extends Fragment implements View.OnClickListener 
     TextView tvQuery;
     EditText etInput;
     AdView mAdView;
+    TextView tvSub;
     private InterstitialAd mInterstitialAd;
+    TextView tvPolicy;
 
 
     public static StandingsFragment getInstance() {
@@ -47,6 +53,10 @@ public class StandingsFragment extends Fragment implements View.OnClickListener 
         tvQuery.setOnClickListener(this);
         etInput = v.findViewById(R.id.et_input_role);
         mAdView = v.findViewById(R.id.adView);
+        tvSub = v.findViewById(R.id.tv_sub);
+        tvSub.setOnClickListener(this);
+        tvPolicy = v.findViewById(R.id.tv_policy);
+        tvPolicy.setOnClickListener(this);
 
         mInterstitialAd = new InterstitialAd(getActivity());
         mInterstitialAd.setAdUnitId(getResources().getString(R.string.ADUnitID_Screen));
@@ -77,6 +87,15 @@ public class StandingsFragment extends Fragment implements View.OnClickListener 
                 startActivity(intent);
 
                 loadScreenAd();
+                break;
+            case R.id.tv_sub:
+                //订阅
+                EventBus.getDefault().post(new EventModel(Constant.Event.QUERY_SUB_AND_BUY));
+                break;
+            case R.id.tv_policy:
+                Uri uri = Uri.parse("https://gujia.kuaizhan.com/50/19/p3981519216603f");
+                Intent intentE = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intentE);
                 break;
         }
     }

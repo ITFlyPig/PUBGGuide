@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PUBG Guide</string>
+    <string name="app_name">Stats Tracker</string>
     <string name="query">Click To View Your PUBG Stats</string>
     <string name="please_input">Please Input Your Name</string>
     <string name="region">服务器</string>
@@ -42,4 +42,7 @@ Congratulations you now,you get a chance for free trial VIP 7 days.</string>
     <string name="videos">Videos</string>
     <string name="weapons">Weapons</string>
     <string name="wallpapers">Wallpapers</string>
+
+    <string name="sub">Free Trial VIP To Unlock More Features</string>
+    <string name="policy">Privacy Policy</string>
 </resources>
