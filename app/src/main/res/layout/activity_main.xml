@@ -13,7 +13,7 @@
         android:orientation="vertical">
 
 
-        <com.igameguide.pubg.widget.NoSmoothScrollViewPager
+        <com.statstracker.forpubggame.widget.NoSmoothScrollViewPager
             android:id="@+id/viewpager"
             android:layout_width="match_parent"
             android:layout_height="0dp"

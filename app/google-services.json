@@ -8,68 +8,6 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:438823345421:android:b0eb822eff1477bd",
-        "android_client_info": {
-          "package_name": "com.igameguide.pubg"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "438823345421-iue342glltvbkmvn9ebd3brbmvi2mslg.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCN4aCQ3cIjMyKWIhWWXbLvFMLLmOGfgjM"
-        }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
-        },
-        "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
-        },
-        "ads_service": {
-          "status": 2
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:438823345421:android:4ba0d1137976715e",
-        "android_client_info": {
-          "package_name": "com.statstracker.forfornitegame"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "438823345421-iue342glltvbkmvn9ebd3brbmvi2mslg.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCN4aCQ3cIjMyKWIhWWXbLvFMLLmOGfgjM"
-        }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
-        },
-        "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
-        },
-        "ads_service": {
-          "status": 2
-        }
-      }
-    },
-    {
-      "client_info": {
         "mobilesdk_app_id": "1:438823345421:android:5136dc821ee4e469",
         "android_client_info": {
           "package_name": "com.statstracker.forpubggame"

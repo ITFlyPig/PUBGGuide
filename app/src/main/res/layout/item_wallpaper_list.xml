@@ -9,7 +9,7 @@
     android:paddingLeft="5dp"
     android:paddingRight="5dp">
 
-    <com.igameguide.pubg.widget.PubgImageView
+    <com.statstracker.forpubggame.widget.PubgImageView
         android:id="@+id/iv_left"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -22,7 +22,7 @@
 
         />
 
-    <com.igameguide.pubg.widget.PubgImageView
+    <com.statstracker.forpubggame.widget.PubgImageView
         android:id="@+id/iv_middle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
         android:scaleType="centerCrop"
         app:scale="0.56" />
 
-    <com.igameguide.pubg.widget.PubgImageView
+    <com.statstracker.forpubggame.widget.PubgImageView
         android:id="@+id/iv_right"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
