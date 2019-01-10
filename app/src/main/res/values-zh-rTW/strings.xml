@@ -17,4 +17,9 @@
     <string name="duo">雙排</string>
     <string name="squad">四排</string>
     <string name="avg_time">平均生存時間</string>
+
+    <string name="stats">戰績</string>
+    <string name="videos">影片</string>
+    <string name="weapons">武器</string>
+    <string name="wallpapers">桌布</string>
 </resources>

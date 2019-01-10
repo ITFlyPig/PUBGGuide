@@ -37,4 +37,9 @@ Congratulations you now,you get a chance for free trial VIP 7 days.</string>
     <string name="firing_modes">射击模式</string>
     <string name="weapon">武器</string>
     <string name="notification">Notification</string>
+
+    <string name="stats">Stats</string>
+    <string name="videos">Videos</string>
+    <string name="weapons">Weapons</string>
+    <string name="wallpapers">Wallpapers</string>
 </resources>

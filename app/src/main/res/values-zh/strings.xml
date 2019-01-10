@@ -29,4 +29,9 @@
     <string name="time_between_shots">射击间隔</string>
     <string name="firing_modes">射击模式</string>
 
+    <string name="stats">战绩</string>
+    <string name="videos">视频</string>
+    <string name="weapons">武器</string>
+    <string name="wallpapers">壁纸</string>
+
 </resources>

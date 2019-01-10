@@ -6,18 +6,22 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
+import android.util.Log;
 
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.statstracker.forpubggame.R;
 import com.statstracker.forpubggame.pic.WallPaperFragment;
+import com.statstracker.forpubggame.util.LocalUtil;
 import com.statstracker.forpubggame.video.VideoFragment;
 import com.statstracker.forpubggame.weapon.WeaponFragment;
 import com.umeng.analytics.MobclickAgent;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements MainContract.View {
 
@@ -37,32 +41,45 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
 
 
+    private String stats;
+    private String videos;
+    private String weapons;
+    private String wallpapers;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         new MainPresenter(this);
 
+        stats = getResources().getString(R.string.stats);
+        videos = getResources().getString(R.string.videos);
+        weapons = getResources().getString(R.string.weapons);
+        wallpapers = getResources().getString(R.string.wallpapers);
+
 
         viewPager = findViewById(R.id.viewpager);
         tabLayout = findViewById(R.id.tablayout);
 
+        if (LocalUtil.match("en", "US", this)) {
+            mTitles = new String[]{stats, weapons};
+            mIconUnselectIds = new int[] {R.mipmap.icon_data_unsel, R.mipmap.icon_weapon_unsel};
+            mIconSelectIds = new int[] {R.mipmap.icon_data_sel, R.mipmap.icon_weapon_sel};
+        } else {
+            mTitles = new String[]{stats, videos, weapons, wallpapers};
+        }
+
 
         mFragments = new ArrayList<>();
         for (int i = 0; i < mTitles.length; i++) {
-            String title = mTitles[i];
-            if (i == 0) {
-                mFragments.add(StandingsFragment.getInstance());
-            } else if (i == 1){
-                mFragments.add(VideoFragment.getInstance());
-            } else if (i == 2) {
-                mFragments.add(WeaponFragment.getInstance());
-            } else if (i == 3) {
-                mFragments.add(WallPaperFragment.getInstance());
-            } else {
-                mFragments.add(StandingsFragment.getInstance());
-            }
 
+            String title = mTitles[i];
+            Fragment f = getFragmentByName(title);
+            if (f == null) {
+                continue;
+            }
+            mFragments.add(f);
             mTabEntities.add(new TabEntity(title, mIconSelectIds[i], mIconUnselectIds[i]));
         }
 
@@ -152,5 +169,26 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     protected void onPause() {
         super.onPause();
         MobclickAgent.onPause(this);
+    }
+
+    private Fragment getFragmentByName(String name) {
+        if (TextUtils.isEmpty(name)) {
+            return null;
+        }
+        if (TextUtils.equals(name, stats)) {
+//            Log.d("wyl", name + " StandingsFragment");
+            return StandingsFragment.getInstance();
+        } else if (TextUtils.equals(name, videos)) {
+//            Log.d("wyl", name + " VideoFragment");
+            return VideoFragment.getInstance();
+        }else if (TextUtils.equals(name, weapons)) {
+//            Log.d("wyl", name + " WeaponFragment");
+            return WeaponFragment.getInstance();
+        }else if (TextUtils.equals(name, wallpapers)) {
+//            Log.d("wyl", name + " WallPaperFragment");
+            return WallPaperFragment.getInstance();
+        }
+        return null;
+
     }
 }
